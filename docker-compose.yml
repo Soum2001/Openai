@@ -1,0 +1,28 @@
+version: '3'
+services:
+  openai-app:
+    image: bitnami/symfony:latest
+    ports:
+      - "3000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - SYMFONY_APP_ENV=prod
+      - SYMFONY_APP_DEBUG=0
+      - SYMFONY_APP_SECRET=secret
+      - SYMFONY_DATABASE_HOST=db
+      - SYMFONY_DATABASE_PORT=3306
+      - SYMFONY_DATABASE_NAME=symfony
+      - SYMFONY_DATABASE_USER=root
+      - SYMFONY_DATABASE_PASSWORD=password
+  database:
+    image: mysql:8.0
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: openai
+        MYSQL_USER: root
+        MYSQL_PASSWORD: mindfire
+    volumes:
+      - db_data:/var/lib/mysql:rw
+volumes:
+  db_data:

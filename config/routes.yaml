@@ -1,0 +1,6 @@
+index:
+   path: /
+   controller: App\Controller\ChatbotController::index
+# my_route:
+#     path: /myroute
+#     controller: App\Controller\MyController::generateResponse
