@@ -1,6 +1,6 @@
-index:
-   path: /
-   controller: App\Controller\ChatbotController::index
-# my_route:
-#     path: /myroute
-#     controller: App\Controller\MyController::generateResponse
+# index:
+#    path: /
+#    controller: App\Controller\ChatbotController::index
+my_route:
+    path: /
+    controller: App\Controller\ChatbotController::openaiImage
